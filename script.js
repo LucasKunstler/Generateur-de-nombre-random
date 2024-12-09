@@ -4,7 +4,7 @@ const resultDiv = document.getElementById('result');
 
 // Ajouter un événement au clic
 generateBtn.addEventListener('click', () => {
-  // Générer un nombre aléatoire entre 0 et 30
+  // Générer un nombre aléatoire entre 1 et 20
   const randomNumber = Math.floor(Math.random() * 21) + 1;
 
   // Ajouter une animation au résultat
