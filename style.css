@@ -161,8 +161,14 @@ body {
     }
   
     #historyList {
-      max-height: 300px; /* Diminuer la hauteur maximale de l'historique sur les petits écrans */
+      width: 100%;
+      max-height: 100vh; /* Diminuer la hauteur maximale de l'historique sur les petits écrans */
     }
+
+    .history-list {
+        padding: 0;
+    }
+
   }
   
   @media screen and (max-width: 480px) {
@@ -174,5 +180,14 @@ body {
     button {
       font-size: 12px; /* Réduire davantage la taille du texte sur les mobiles */
     }
+
+    #historyList {
+        width: 100%;
+        max-height: 100vh; /* Diminuer la hauteur maximale de l'historique sur les petits écrans */
+      }
+  
+      .history-list {
+          padding: 0;
+      }
   }
   
