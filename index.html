@@ -3,17 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <title>Nombre Aléatoire</title>
+  <title>Nombre Aléatoire avec Historique</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
-    <h1>Générateur de nombre aléatoire</h1>
+    <h1>Tirer un Nombre Aléatoire</h1>
     <p>Cliquez sur le bouton ci-dessous pour découvrir un nombre aléatoire entre 1 et 20.</p>
     <button id="generateBtn">🎲 Générer un Nombre</button>
     <div class="result" id="result">?</div>
+    <button id="toggleHistoryBtn">Afficher l'Historique</button>
+    <ol id="historyList" class="history-list hidden"></ol>
   </div>
   <script src="script.js"></script>
 </body>
 </html>
+
+

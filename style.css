@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
@@ -71,5 +71,58 @@ body {
   .result.pop {
     transform: scale(1.2);
     color: #fff;
+  }
+  
+  /* Historique */
+  .history-list {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 1.2rem;
+    color: white;
+    list-style-position: inside;
+  }
+  
+  /* Historique : Style des entrées */
+  .history-list li {
+    display: flex; /* Utilisé pour organiser proprement le contenu */
+    justify-content: space-between; /* Sépare les colonnes proprement */
+    align-items: center; /* Centre verticalement le texte */
+    padding: 5px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Ligne de séparation */
+    max-width: 100%; /* Empêche de dépasser la largeur du conteneur */
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    white-space: nowrap; /* Empêche le retour à la ligne */
+    overflow: hidden; /* Cache les débordements */
+    text-overflow: ellipsis; /* Ajoute des "..." pour les débordements */
+  }
+  
+
+
+  /* Masquer l'historique */
+.hidden {
+    display: none;
+  }
+  
+  /* Bouton pour afficher/masquer */
+  #toggleHistoryBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #34d399, #10b981);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  
+  #toggleHistoryBtn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 15px rgba(16, 185, 129, 0.5);
+  }
+  
+  #toggleHistoryBtn:active {
+    transform: scale(1.05);
   }
   
