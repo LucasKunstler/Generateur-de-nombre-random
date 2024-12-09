@@ -10,6 +10,16 @@ body {
     background: linear-gradient(135deg, #6a11cb, #2575fc);
     color: white;
   }
+
+  #controls {
+    display: flex;
+    flex-direction: column; /* Alignement vertical */
+    gap: 10px;
+  }
+
+  button.hidden {
+    display: none; /* Cache les éléments ayant la classe "hidden" */
+  }
   
   /* Conteneur principal */
   .container {
@@ -41,6 +51,7 @@ body {
     font-size: 1.2rem;
     font-weight: bold;
     padding: 15px 30px;
+    margin-bottom: 10px;
     color: white;
     background: linear-gradient(135deg, #ff7eb3, #ff758c);
     border: none;
@@ -124,5 +135,44 @@ body {
   
   #toggleHistoryBtn:active {
     transform: scale(1.05);
+  }
+
+
+  #clearHistoryBtn{
+    background: none;
+  }
+
+  #clearHistoryBtn:hover{
+    box-shadow: none;
+  }
+
+  #clearHistoryBtn img{
+    width: 50px;
+  }
+
+  @media screen and (max-width: 768px) {
+    #controls {
+      width: 90%; /* Prendre 90% de la largeur sur les tablettes et petits écrans */
+      gap: 8px;
+    }
+  
+    button {
+      font-size: 14px; /* Réduire la taille de la police sur des écrans plus petits */
+    }
+  
+    #historyList {
+      max-height: 300px; /* Diminuer la hauteur maximale de l'historique sur les petits écrans */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    #controls {
+      width: 95%; /* Sur les petits écrans (mobiles), l'interface occupe presque toute la largeur */
+      gap: 6px;
+    }
+  
+    button {
+      font-size: 12px; /* Réduire davantage la taille du texte sur les mobiles */
+    }
   }
   

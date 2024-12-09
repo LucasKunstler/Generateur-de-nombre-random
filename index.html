@@ -8,12 +8,16 @@
 </head>
 <body>
   <div class="container">
-    <h1>Tirage des nombres gagnants pour la galette des rois</h1>
+    <h1>Tirage des gagnants pour la galette des rois</h1>
     <p>Cliquez sur le bouton ci-dessous pour découvrir un nombre aléatoire entre 1 et 20.</p>
     <button id="generateBtn">🎲 Générer un Nombre</button>
     <div class="result" id="result">?</div>
-    <button id="toggleHistoryBtn">Afficher l'Historique</button>
-    <ol id="historyList" class="history-list hidden"></ol>
+    <div id="controls">
+        <button id="toggleHistoryBtn">Afficher l'Historique</button>
+        <ol id="historyList" class="history-list hidden"></ol>
+        <button id="clearHistoryBtn" class="hidden"><img src="./image/supprimer.webp" alt="Effacer l'historique"></button>
+      </div>
+      
   </div>
   <script src="script.js"></script>
 </body>

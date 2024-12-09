@@ -1,50 +1,58 @@
 // Sélectionner les éléments
 const generateBtn = document.getElementById('generateBtn');
-const resultDiv = document.getElementById('result');
-const historyList = document.getElementById('historyList');
 const toggleHistoryBtn = document.getElementById('toggleHistoryBtn');
+const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+const historyList = document.getElementById('historyList');
 
 // Initialiser un compteur pour les feuilles gagnantes
 let feuilleCounter = 1;
 
 // Ajouter un événement pour générer un nombre aléatoire et un "gagnant feuille"
 generateBtn.addEventListener('click', () => {
-  // Générer un nombre aléatoire entre 1 et 20
   const randomNumber = Math.floor(Math.random() * 20) + 1;
-
-  // Construire le texte pour le gagnant
   const gagnantTexte = `Gagnant Feuille ${feuilleCounter} - Nombre tiré : ${randomNumber}`;
 
-  // Afficher le texte dans le conteneur du résultat
+  // Afficher le résultat
+  const resultDiv = document.getElementById('result');
   resultDiv.textContent = `${randomNumber}`;
-  resultDiv.classList.add('pop');
-
-  // Supprimer l'animation après 300ms pour pouvoir la rejouer
-  setTimeout(() => {
-    resultDiv.classList.remove('pop');
-  }, 300);
-
-  // Ajouter le texte à l'historique
+  
+  // Ajouter l'élément à l'historique
   const listItem = document.createElement('li');
   listItem.textContent = gagnantTexte;
   historyList.appendChild(listItem);
 
-  // Incrémenter le compteur
+  // Incrémenter le compteur de feuille
   feuilleCounter++;
+
+  // Vérifier si la liste est visible et contient des éléments
+  if (!historyList.classList.contains('hidden') && historyList.children.length > 0) {
+    clearHistoryBtn.classList.remove('hidden');
+  }
 });
 
 // Ajouter un événement pour afficher/masquer l'historique
 toggleHistoryBtn.addEventListener('click', () => {
-  // Basculer la classe "hidden" sur la liste
   historyList.classList.toggle('hidden');
+  toggleHistoryBtn.textContent = historyList.classList.contains('hidden')
+    ? 'Afficher l\'Historique'
+    : 'Masquer l\'Historique';
 
-  // Modifier le texte du bouton en fonction de l'état
-  if (historyList.classList.contains('hidden')) {
-    toggleHistoryBtn.textContent = 'Afficher l\'Historique';
+  // Si l'historique est visible, afficher le bouton "Effacer l'Historique" si la liste n'est pas vide
+  if (!historyList.classList.contains('hidden') && historyList.children.length > 0) {
+    clearHistoryBtn.classList.remove('hidden');
   } else {
-    toggleHistoryBtn.textContent = 'Masquer l\'Historique';
+    clearHistoryBtn.classList.add('hidden');
   }
 });
+
+// Ajouter un événement pour effacer l'historique
+clearHistoryBtn.addEventListener('click', () => {
+  historyList.innerHTML = ''; // Effacer le contenu
+  feuilleCounter = 1; // Réinitialiser le compteur
+  const resultDiv = document.getElementById('result');
+  clearHistoryBtn.classList.add('hidden'); // Cacher le bouton après avoir effacé l'historique
+});
+
 
 
 
